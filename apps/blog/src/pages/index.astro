@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+---
+
+<Layout title="Knutech Blog">
+  <main class="mx-auto max-w-2xl px-4 py-16">
+    <h1 class="mb-2 text-4xl font-bold">Knutech Blog</h1>
+    <p class="mb-8" style={`color: var(--color-accent)`}>
+      Thoughts on software engineering and more.
+    </p>
+    <ul class="space-y-6">
+      {
+        sortedPosts.map(post => (
+          <li>
+            <a href={`/posts/${post.id}`} class="text-xl font-semibold">
+              {post.data.title}
+            </a>
+            <p class="mt-1 text-sm opacity-70">
+              {new Date(post.data.pubDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+            <p class="mt-2">{post.data.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-12">
+      <a href="https://me.knutech.net">&larr; Back to main site</a>
+    </div>
+  </main>
+</Layout>

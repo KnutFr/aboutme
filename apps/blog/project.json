@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/blog/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "command": "astro build",
+      "options": {
+        "cwd": "apps/blog"
+      }
+    },
+    "dev": {
+      "command": "astro dev --port 4321",
+      "options": {
+        "cwd": "apps/blog"
+      }
+    },
+    "preview": {
+      "command": "astro preview --port 4321",
+      "options": {
+        "cwd": "apps/blog"
+      }
+    }
+  }
+}
