@@ -3,6 +3,10 @@
 dist/
 .output/
 
+# nx
+.nx/
+tmp/
+
 # dependencies
 node_modules/
 

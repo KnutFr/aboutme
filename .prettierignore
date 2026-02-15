@@ -2,12 +2,15 @@
 /*
 
 # Except these files & folders
-!/src
-!/public
+!/apps
+!/libs
 !/.github
-!tsconfig.json
-!astro.config.mjs
+!tsconfig.base.json
+!nx.json
 !package.json
 !.prettierrc
 !.eslintrc.js
 !README.md
+
+# Ignore files prettier can't parse
+*.svg

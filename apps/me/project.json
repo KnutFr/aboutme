@@ -1,0 +1,26 @@
+{
+  "name": "me",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/me/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "command": "astro build",
+      "options": {
+        "cwd": "apps/me"
+      }
+    },
+    "dev": {
+      "command": "astro dev --port 4322",
+      "options": {
+        "cwd": "apps/me"
+      }
+    },
+    "preview": {
+      "command": "astro preview --port 4322",
+      "options": {
+        "cwd": "apps/me"
+      }
+    }
+  }
+}
